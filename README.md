@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=j942wKiXFu8&list=PL4cUxeGkcC9gZD-Tvwfod2galSzfRiP9d&index=1&pp=iAQB
+
 ____VIDEO 1 REACTJS INTRODUCTION
 React is an open source Javascript library used for building User Interfaces and Interactive web applications.
 
@@ -44,10 +46,29 @@ We can use simple react snippets to create a stateless functional component (sfc
 Create a navbar component and export it, then import it in the root component.
 
 _____VIDEO 6 Adding Styles
+When we create a boiler plate react app it comes with some CSS styles for the root component. The styles are not only applied to the root component, bt they are also applied to ant component that is in the browser at that time.
+This is because React takes all the styles and adds them to the head element of the webpage.
+When you import styles to a component it is applied to the other components in the webpage, it does not scope the styles to a single component.
 
+CSS modules can be used to scope the styles or Style components.
+Index.css can be used as a global style sheet.
+
+Inline styling in JSX --- 
+In Html we use the style property then add the CSS properties as a string value.
+In JSX we add the properties as a dynamic value using curly braces, double curly braces, one indicating it is a dynamic value and the other one is because the value itself is an object.
 
 _____VIDEO 7 Click Events and Functions
+There are a lot of events that occur on a website when a user browses it e.g. hover events, keyboard, click events etc.
 
+A function can be created in a component and linked to a button element or any other element, so that when a user clicks on it fires or returns a value. We do this using the onClick property and passing the name of the function as a dynamic value and reference.
+
+We do not add the parenthesis to the name of the function as it is usually done, this is because adding the parenthesis invokes the function and it returns a value before the user clicks on the button.
+
+When we want to pass an argument to the function when invoking it we use an anonymous function.
+<button onClick={()=> handleClickAgain('mario')}>Click me again</button>., doing this will not invoke the function until the user clicks, as it is wrapped in an anonymous function. When the user clicks it fires up the function then invokes the other one which passes in the argument.
+
+The events object or parameter typically refers to a data structure that holds information about events, such as user interactions or system notifications.
+const.handleClick = (e) => {}
 
 _____VIDEO 8 Using State (useState hook)
 The State of a component means, the data being used in a componentat that point in time. The state could be an array of values, booleans, strings or objects etc.
