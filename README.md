@@ -46,7 +46,7 @@ We can use simple react snippets to create a stateless functional component (sfc
 Create a navbar component and export it, then import it in the root component.
 
 _____VIDEO 6 Adding Styles
-When we create a boiler plate react app it comes with some CSS styles for the root component. The styles are not only applied to the root component, bt they are also applied to ant component that is in the browser at that time.
+When we create a boiler plate react app it comes with some CSS styles for the root component. The styles are not only applied to the root component, bt they are also applied to any component that is in the browser at that time.
 This is because React takes all the styles and adds them to the head element of the webpage.
 When you import styles to a component it is applied to the other components in the webpage, it does not scope the styles to a single component.
 
@@ -71,7 +71,52 @@ The events object or parameter typically refers to a data structure that holds i
 const.handleClick = (e) => {}
 
 _____VIDEO 8 Using State (useState hook)
-The State of a component means, the data being used in a componentat that point in time. The state could be an array of values, booleans, strings or objects etc.
+The State of a component means, the data being used in a component at that point in time. The state could be an array of values, booleans, strings or objects etc.
 A hook is a special type of function that does a certain job. UseState hook gives as a way to make a reactive value and also provides us with a way to change that value whenever we want.
+
+To use the useState hook we need to import it from the react library.
+We invoke the function useState and give the state an initial value, then store it in a value using const and then use array destructuring to values that the hook function returns.
+const [name, setName] = useState('Trevor')
+
+When we use setName to change the value that triggers react to rerender the component and when it does that we have that new value of name that has been updated.
+
+We can use the useState hook as many times as we want in a component.
+
+_____VIDEO 9 React Developer Tools
+React DEveloper tools is an extension for chrome and firefox. You can find it in chrome web store and in firefox you can find it in firefox ADD-ONS library.
+
+React developer tools integrate with the browser development tools and give us extra features that we can use on any website created with react.
+
+When you check on console the button on the right side (>>), react developer tools add two extra tabs; components and profiler.
+The component tree gives us a component diagram/tree of our current application.
+When you hover over the different components in console, you get extra features which are useful, e.g
+ i)  Suspense icon
+ ii) Inspect the matching DOM element - It is used to find whatever DOM element the component represents in the elements tab.
+ iii) Log this component data to the console icon - it logs all the data about the component to the   console.
+ iv) View source for this element icon - it helps us to view the source file or javascript file of the component in the dev tools.
+
+This tool is helpful when developing, testing or debugging react applications.
+
+_____VIDEO 10 Outputting Lists
+Having a list as our values, to output the items in the list, we can hand code it in our template bt this is tiresome, onsumes a lot of time and the data may change.
+
+We use the map method in Javascript to cycle through an array and can do something with each item in the array.
+
+_____VIDEO 11 Props
+Props are a way to pass data from one component, a parent component, into a child component.
+We do this by making a property tag of the child component that we have nested inside the parent component, and then pass a dynamic value which is going to be the variable name we gave our values or data.
+<Bloglist blogs={blogs}>
+
+We then pass the property to the child component as props.
+const Bloglist = (props) => {
+    const blogs = props.blogs;
+}
+
+Props makes our components more reusable.
+It allows us to use the same data in the parent component when needed later.
+
+_____VIDEO 12 Reusing Components
+
+
 
 
