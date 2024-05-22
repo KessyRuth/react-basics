@@ -193,7 +193,7 @@ The catch method block catches any kind of network error and fires a function.
 The catch error does not catch any other error apart from the connection error. 
 
 Incase we have another error like our request reaches the server bt the server returns an error back maybe if the request is denied.
-In this case we need to check the response object when we get it back, so we do an if check and check the ok property on the response object. We check if the ok property is not okay then we throw an error and enter our own message error, and then catch it with the catch method.
+In this case we need to check the response object when we get it back, so we do an if check and check the ok property on the response object. We check if the ok property is not okay then we throw an error and enter our own message error, and then catch it with the catch block method.
 
 
 
