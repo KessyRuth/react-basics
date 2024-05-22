@@ -140,6 +140,8 @@ We can also add an actual dependencies to the array, [name]. This means any stat
 
 **_____VIDEO 16 Using JSON Server**
 JSON server allows us to create a fake REST API using a JSON file.
+A JSON server is a lightweight, mock server that can be used to create a simple RESTful API for development and testing purposes. It allows developers to quickly set up a backend by providing data in JSON format, which the server then makes available via standard HTTP methods (GET, POST, PUT, DELETE)
+
 We first create a JSON that is going to act as our database.
 When using JSON server each top level property in objects is considered a resource, and it creates endpoints for us to interact with this resource, so we can do things like delete items from it, add items, edit items.
   {
@@ -159,6 +161,43 @@ We can do this by either installing the JSON server package locally into the pro
 /blogs/{id}       GET           Fetch a single blog
 /blogs            POST          Add a new blog
 /blogs/{id}       DELETE        Delete a blog
+
+**_____VIDEO 17 Fetching Data with useEffect**
+We can fetch data from the json file in the useEffect hook, using the fetch request.
+We use fetch function with an endpoint: 
+useEffect(()=> {
+   fetch('http://localhost:8000/blogs')
+}, [])
+This returns a promise and so we tackle on a then method. 
+We cannot make the useEffect asynchronous, only if the logic is externalized as an  independent component, that is when you can make it async.
+
+Making a function asychronous in react means defining it to handle asychronous operations, typically using the 'async' keyword. This allows the function to use 'await' to pause execution until, a promise is resolved or rejected.
+
+The then method will fire a function after the promise is resolved. First we get a response object, the response object is not the data. To get the data we need to something with the response object, this is where we use the fetch API.
+  .then(res => {
+    return=res.json();
+  })
+  .then(data => {
+
+  })
+This parses the json into a javascript object for us and returns it as a value. This returns us another promise. We then tackle another then method, which fires a function once the promise is complete and it takes as a parameter the actual data that the above then method gets us.
+
+**_____VIDEO 18 Conditional Templates**
+We do a conditional template by using a logical and (&&). Logical and works by checking the value on the left, if it's true then the value on the right is executed, if false the value is not even checked.
+{blogs && <Bloglist blogs = {blogs} title='All blogs!'/>}
+
+A loading message can be displayed when the process of fetching data is been awaited. We can do this using the useState hook and the conditional templates.
+
+**_____VIDEO 19 Handling Errors**
+The catch method block catches any kind of network error and fires a function.
+The catch error does not catch any other error apart from the connection error. 
+
+Incase we have another error like our request reaches the server bt the server returns an error back maybe if the request is denied.
+In this case we need to check the response object when we get it back, so we do an if check and check the ok property on the response object. We check if the ok property is not okay then we throw an error and enter our own message error, and then catch itwith the catch method.
+
+
+
+
 
 
 
