@@ -142,7 +142,7 @@ We can also add an actual dependencies to the array, [name]. This means any stat
 JSON server allows us to create a fake REST API using a JSON file.
 A JSON server is a lightweight, mock server that can be used to create a simple RESTful API for development and testing purposes. It allows developers to quickly set up a backend by providing data in JSON format, which the server then makes available via standard HTTP methods (GET, POST, PUT, DELETE)
 
-We first create a JSON that is going to act as our database.
+We first create a JSON file that is going to act as our database.
 When using JSON server each top level property in objects is considered a resource, and it creates endpoints for us to interact with this resource, so we can do things like delete items from it, add items, edit items.
   {
     **"blogs": [**
@@ -193,7 +193,49 @@ The catch method block catches any kind of network error and fires a function.
 The catch error does not catch any other error apart from the connection error. 
 
 Incase we have another error like our request reaches the server bt the server returns an error back maybe if the request is denied.
-In this case we need to check the response object when we get it back, so we do an if check and check the ok property on the response object. We check if the ok property is not okay then we throw an error and enter our own message error, and then catch it with the catch block method.
+In this case we need to check the response object when we get it back, so we do an if check and check the ok property on the response object. We check if the ok property is not okay then we throw an error and enter our own message error, and then catch it with the catch block .
+
+**_____VIDEO 20 Creating a Custom hook**
+In react, a custom hook is a reusable function that allows you to encapsulate and share logic across multiple components. It's a way of extracting component logic into reusable functions which can be particularly useful for managing stateful logic or side effects.
+
+A custom hook is simply a function whose name starts with 'use'.
+import {useState, useEffect} from 'react';
+
+**_____VIDEO 21 The React Router**
+We can introduce multiple pages in react using the react router.
+
+A typical website that does not use react handles multiple pages by, we always start by typing a url on our browser and pressing enter then this sends a request to the server, which responds by sending a full html page (index.html) which we view on our browser.
+When a user clicks on a link on the page, to send them to another webpage, this sends a brand new request to the server and the server responds by sending the new webpage requested.
+This cycles continues as we click other page links in the website.
+
+React apps don't work like this, they delegate all the routing and changing of page content to the browser only
+The process starts the same way, we type a url on our browser and press enter, this sends a request to the server and the sever responds by sending us the index.html page bt also sends us our compiled react javascript files which controls our react app, from this point react and the react router can take full control of the application.
+Initially the html page we get back is virtually empty, and then react injects the content dynamically using the components that we create. If a user then clicks a link to new page, the react router steps in and intercepts that request to stop it from going to the server, and instead it looks on the new page request and tells react to inject the required content on the screen.
+This procees means we are making less requests to the server and the whole website now feels faster and sleeker.
+
+How to set up SPAs
+We first install react router package (npm install react-router-dom@5) @5 if you want to install a specific version, in this case we want version 5.
+The go to the root component and import the BrowserRouter, Route and Switch from the react-router-dom.
+Then we sorround our entire application with the router component, this means we can use the router in our entire application.
+The next step we need to decide where we want our page content to go when we go to different pages.
+
+**_____VIDEO 22 More Routes & Exact Matches**
+The exact property is used together with the path prop inside the route element so that  react matches the route with the exact url, not when something is included in the route that matches the url.
+
+The switch component is used to sorround the route components,it ensures that only one route component shows in the browser at any one time.
+
+**_____VIDEO 23 Router Links**
+We need to use a special link tag instead of anchor tags, if we want react to handle all of the routing in the browser and intercept all the requests for new pages.
+
+The first thing to do is import the link tag from the react-router-dom package.
+then replace the anchor tags<a></a>a, with the link tags<Link></Link>. The link component does not have the href prop instead it uses (to),, <Link to="/">Home</Link>
+
+
+
+
+
+
+
 
 
 
